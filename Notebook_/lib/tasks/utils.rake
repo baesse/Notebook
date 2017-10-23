@@ -1,8 +1,16 @@
 namespace :utils do
+
+  #task criado para preencher o banco, melhor utilizar ela para testarmos os gets em apis
+
+
   desc "Popular Banco de dados"
   task seed: :environment do
 
 
+
+
+
+#cria 10 tipos de contatos
 
 10.times do |i|
 
@@ -17,7 +25,7 @@ description:"adsdasdsa"
 end
 
 
-
+#cria 10 contatos com um exemplo aleatorio de tipo
 10.times do |i|
 
 Contact.create!(
@@ -36,7 +44,10 @@ Contact.create!(
 
 end
 
-byebug
+
+
+
+#para cada contato existente é criado um endereco
 
 Contact.all.each do |contact|
 
@@ -49,6 +60,9 @@ Address.create!(
 
 end
 
+
+
+#para cada contato existente é criado uma quatidade aleatorio de numero de telefone dentro do intervalo de 1 a 5 
 
 Contact.all.each do |contact|
 
